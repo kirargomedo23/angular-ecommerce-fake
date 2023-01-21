@@ -8,15 +8,12 @@ import { ProductService } from '@app/services/product/product.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private p : ProductService ){
+  constructor( ){
 
   }
 
   ngOnInit(){
-    this.p.getAll().subscribe(data => {
-      console.log("datA: ", data);
 
-    })
   }
 
 }
