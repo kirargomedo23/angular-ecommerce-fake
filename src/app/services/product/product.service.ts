@@ -1,3 +1,5 @@
+
+import { environment } from '@environments/environments';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -9,24 +11,32 @@ import {Product} from '@app/interfaces/product';
 })
 export class ProductService implements BaseHttpService<Product> {
 
+  private url = environment.url;
+
   constructor(private httpClient: HttpClient) { }
 
-  create(): Observable<Product> {
-    throw new Error('Method not implemented.');
+  create(data:Product ): Observable<Product> {
+    return this.httpClient.post<Product>(`${this.url}/v1/products/`, data);
   }
+
   getAll(): Observable<Product> {
-    throw new Error('Method not implemented.');
+    return this.httpClient.get<Product>(`${this.url}/v1/products`);
   }
+
   getById(id: number): Observable<Product> {
+    return this.httpClient.get<Product>(`${this.url}/v1/products/${id}`);
+  }
+
+  getPagination(offset: number, limit: number): Observable<Product> {
+    return this.httpClient.get<Product>(`${this.url}/v1/products?offset=${offset}&limit=${limit}`);
+  }
+
+  updateById(data:Product, id:number): Observable<Product> {
     throw new Error('Method not implemented.');
   }
-  updateById(id: number): Observable<Product> {
-    throw new Error('Method not implemented.');
-  }
+
   deleteById(id: number): Observable<Product> {
     throw new Error('Method not implemented.');
   }
-  getPagination(offset: number, limit: number): Observable<Product> {
-    throw new Error('Method not implemented.');
-  }
+
 }
