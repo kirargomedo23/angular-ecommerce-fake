@@ -11,18 +11,14 @@ const routes: Routes = [
     path: 'app',
     children: [
       {
-        path: 'products',
-        loadChildren: () => import('@app/pages/products/products.module').then((m) => m.ProductsModule),
-      },
-      {
-        path: 'profile',
-        loadChildren: () => import('@app/pages/profile/profile.module').then((m) => m.ProfileModule),
+        path: '',
+        loadChildren: () => import('@app/pages/pages.module').then((m) => m.PagesModule),
       }
     ]
   },
   {
     path:'login',
-    loadChildren: () => import('@app/pages/login/login.module').then((m) => m.LoginModule),
+    loadChildren: () => import('@app/login/login.module').then((m) => m.LoginModule),
   }
 ];
 
