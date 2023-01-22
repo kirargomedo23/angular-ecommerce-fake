@@ -5,13 +5,15 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './products.component';
 
 
+import {MatChipsModule} from '@angular/material/chips';
+
 @NgModule({
   declarations: [
     ProductsComponent
   ],
   imports: [
-    CommonModule,
-    ProductsRoutingModule
+    CommonModule, ProductsRoutingModule,
+    MatChipsModule
   ]
 })
 export class ProductsModule { }

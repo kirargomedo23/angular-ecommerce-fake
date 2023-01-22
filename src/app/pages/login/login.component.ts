@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '@app/services/product/product.service';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '@app/services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +10,27 @@ import { ProductService } from '@app/services/product/product.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( ){
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private readonly router: Router,
+    private readonly authService: AuthService
+   ){
 
   }
 
   ngOnInit(){
 
+  }
+
+
+  startSession(){
+
+
+    /* this.authService.login().subscribe( (data) => {
+
+    }, err => {
+
+    } ); */
   }
 
 }

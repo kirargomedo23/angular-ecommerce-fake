@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
 
+//Imports Angular Material
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,8 @@ import { ProfileComponent } from './profile.component';
   ],
   imports: [
     CommonModule,
-    ProfileRoutingModule
+    ProfileRoutingModule,
+    MatCardModule
   ]
 })
 export class ProfileModule { }
