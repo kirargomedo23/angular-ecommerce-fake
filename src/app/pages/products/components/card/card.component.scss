@@ -1,0 +1,20 @@
+
+
+.card-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.card-item{
+  width: 10rem;
+  margin: 20px;
+}
+
+.mat-actions-btn{
+  position: absolute;
+  bottom: 10px;
+  margin: 0 20%;
+}
+

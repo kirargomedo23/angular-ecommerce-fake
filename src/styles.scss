@@ -11,3 +11,13 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   //background-color: var(--bg-color) ;
 }
+
+
+.pointer{
+  cursor: pointer;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+}
